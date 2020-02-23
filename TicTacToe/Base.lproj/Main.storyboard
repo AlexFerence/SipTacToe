@@ -132,9 +132,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIC-TAC-TOE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fr-cY-EpM">
-                                <rect key="frame" x="45" y="143.5" width="324" height="64.5"/>
-                                <fontDescription key="fontDescription" name="ThaleahFat" family="ThaleahFat" pointSize="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIP-TAC-TOE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fr-cY-EpM">
+                                <rect key="frame" x="57" y="104" width="300" height="59"/>
+                                <fontDescription key="fontDescription" name="ThaleahFat" family="ThaleahFat" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -149,9 +149,22 @@
                                     <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u8r-F5-rGI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkD-vn-HlB">
-                                <rect key="frame" x="185.5" y="750" width="43.5" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESET" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkD-vn-HlB">
+                                <rect key="frame" x="180" y="750" width="54" height="20.5"/>
+                                <fontDescription key="fontDescription" name="ThaleahFat" family="ThaleahFat" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer-512" translatesAutoresizingMaskIntoConstraints="NO" id="33X-De-XTx">
+                                <rect key="frame" x="107" y="168" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ljc-9B-qm4"/>
+                                    <constraint firstAttribute="width" constant="200" id="yW7-Tw-tar"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RULES: if you lose you drink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0H-D7-7g2">
+                                <rect key="frame" x="68.5" y="795.5" width="277.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="ThaleahFat" family="ThaleahFat" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -159,9 +172,11 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cKk-Cu-Leh" firstAttribute="top" secondItem="F8F-k2-4Ck" secondAttribute="bottom" constant="30" id="16i-An-MrI"/>
-                            <constraint firstItem="LQo-E1-Ory" firstAttribute="top" secondItem="3Fr-cY-EpM" secondAttribute="bottom" constant="90" id="9sV-S5-4O2"/>
+                            <constraint firstItem="3Fr-cY-EpM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Ez-x9-8WG"/>
                             <constraint firstItem="cKk-Cu-Leh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C11-oF-Xa9"/>
+                            <constraint firstItem="o0H-D7-7g2" firstAttribute="top" secondItem="xkD-vn-HlB" secondAttribute="bottom" constant="25" id="EHy-0B-uTp"/>
                             <constraint firstItem="F8F-k2-4Ck" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVw-PD-71E"/>
+                            <constraint firstItem="33X-De-XTx" firstAttribute="top" secondItem="3Fr-cY-EpM" secondAttribute="bottom" constant="5" id="Kvf-nQ-euK"/>
                             <constraint firstItem="LQo-E1-Ory" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SnI-x0-wZY"/>
                             <constraint firstItem="LQo-E1-Ory" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="TJF-qA-1uc"/>
                             <constraint firstItem="xkD-vn-HlB" firstAttribute="top" secondItem="cKk-Cu-Leh" secondAttribute="bottom" constant="10" id="cHY-jx-peF"/>
@@ -169,6 +184,10 @@
                             <constraint firstItem="F8F-k2-4Ck" firstAttribute="top" secondItem="LQo-E1-Ory" secondAttribute="bottom" constant="25" id="dqa-lD-LKj"/>
                             <constraint firstItem="xkD-vn-HlB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fPG-5L-ReW"/>
                             <constraint firstItem="LQo-E1-Ory" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fza-zl-F2J"/>
+                            <constraint firstItem="o0H-D7-7g2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="in5-j8-czO"/>
+                            <constraint firstItem="3Fr-cY-EpM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nUM-kR-jxC"/>
+                            <constraint firstItem="33X-De-XTx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rn1-ve-FNe"/>
+                            <constraint firstItem="LQo-E1-Ory" firstAttribute="top" secondItem="33X-De-XTx" secondAttribute="bottom" constant="30" id="uIm-Cc-mgP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LQo-E1-Ory" secondAttribute="trailing" constant="15" id="zmp-2P-xHM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -193,5 +212,6 @@
     </scenes>
     <resources>
         <image name="New Piskel-4.png (2)" width="96" height="96"/>
+        <image name="beer-512" width="170.5" height="170.5"/>
     </resources>
 </document>

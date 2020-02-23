@@ -203,6 +203,14 @@ class ViewController: UIViewController {
             bottomHeadline.text = "Player 2's Turn"
         }
         
+        moveCounter = moveCounter + 1
+        
+        if (moveCounter > 8) {
+            bottomHeadline.text = "Tie game!"
+            //gameOver = true
+            
+        }
+        
         if (playerSquareCounter[0][0] == playerSquareCounter[0][1] && playerSquareCounter[0][1] == playerSquareCounter[0][2] && playerSquareCounter[0][0] != 0) {
             print("someone has won")
             topLeftButton.backgroundColor = UIColor.green
@@ -260,13 +268,7 @@ class ViewController: UIViewController {
             someoneHasWon()
         }
         
-        moveCounter = moveCounter + 1
         
-        if (moveCounter > 8) {
-            bottomHeadline.text = "Tie game!"
-            //gameOver = true
-            
-        }
         
     }
     
