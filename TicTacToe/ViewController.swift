@@ -18,11 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomLeftButton: UIButton!
     @IBOutlet weak var bottomMiddleButton: UIButton!
     @IBOutlet weak var bottomRightButton: UIButton!
+    @IBOutlet weak var bottomHeadline: UILabel!
     
     var player1 = true
     
     var moveCounter = 0
     var clickable = true
+    var gameOver = false
     
     var arrayCounter = [[false, false, false], [false, false, false], [false, false, false]]
     var playerSquareCounter = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
@@ -193,39 +195,78 @@ class ViewController: UIViewController {
     
     
     func checkWinner() {
+        
+        if (player1) {
+            bottomHeadline.text = "Player 1's Turn"
+        }
+        else {
+            bottomHeadline.text = "Player 2's Turn"
+        }
+        
         if (playerSquareCounter[0][0] == playerSquareCounter[0][1] && playerSquareCounter[0][1] == playerSquareCounter[0][2] && playerSquareCounter[0][0] != 0) {
             print("someone has won")
+            topLeftButton.backgroundColor = UIColor.green
+            topMiddleButton.backgroundColor = UIColor.green
+            topRightButton.backgroundColor = UIColor.green
             someoneHasWon()
         }
         if (playerSquareCounter[1][0] == playerSquareCounter[1][1] && playerSquareCounter[1][1] == playerSquareCounter[1][2] && playerSquareCounter[1][0] != 0) {
             print("someone has won")
+            middleLeftButton.backgroundColor = UIColor.green
+            middleMiddleButton.backgroundColor = UIColor.green
+            middleRightButton.backgroundColor = UIColor.green
             someoneHasWon()
         }
         if (playerSquareCounter[2][0] == playerSquareCounter[2][1] && playerSquareCounter[2][1] == playerSquareCounter[2][2] && playerSquareCounter[2][0] != 0) {
             print("someone has won")
+            bottomLeftButton.backgroundColor = UIColor.green
+            bottomMiddleButton.backgroundColor = UIColor.green
+            bottomRightButton.backgroundColor = UIColor.green
             someoneHasWon()
         }
         if (playerSquareCounter[0][0] == playerSquareCounter[1][0] && playerSquareCounter[1][0] == playerSquareCounter[2][0] && playerSquareCounter[2][0] != 0) {
             print("someone has won")
+            topLeftButton.backgroundColor = UIColor.green
+            middleLeftButton.backgroundColor = UIColor.green
+            bottomLeftButton.backgroundColor = UIColor.green
             someoneHasWon()
         }
         if (playerSquareCounter[0][1] == playerSquareCounter[1][1] && playerSquareCounter[1][1] == playerSquareCounter[2][1] && playerSquareCounter[2][1] != 0) {
             print("someone has won")
+            topMiddleButton.backgroundColor = UIColor.green
+            middleMiddleButton.backgroundColor = UIColor.green
+            bottomMiddleButton.backgroundColor = UIColor.green
             someoneHasWon()
         }
         if (playerSquareCounter[0][2] == playerSquareCounter[1][2] && playerSquareCounter[1][2] == playerSquareCounter[2][2] && playerSquareCounter[2][2] != 0) {
             print("someone has won")
+            topRightButton.backgroundColor = UIColor.green
+            middleRightButton.backgroundColor = UIColor.green
+            bottomRightButton.backgroundColor = UIColor.green
             someoneHasWon()
         }
         if (playerSquareCounter[0][0] == playerSquareCounter[1][1] && playerSquareCounter[1][1] == playerSquareCounter[2][2] && playerSquareCounter[2][2] != 0) {
             print("someone has won")
+            topLeftButton.backgroundColor = UIColor.green
+            middleMiddleButton.backgroundColor = UIColor.green
+            bottomRightButton.backgroundColor = UIColor.green
             someoneHasWon()
         }
         if (playerSquareCounter[0][2] == playerSquareCounter[1][1] && playerSquareCounter[1][1] == playerSquareCounter[2][0] && playerSquareCounter[2][0] != 0) {
             print("someone has won")
+            topRightButton.backgroundColor = UIColor.green
+            middleMiddleButton.backgroundColor = UIColor.green
+            bottomLeftButton.backgroundColor = UIColor.green
             someoneHasWon()
         }
         
+        moveCounter = moveCounter + 1
+        
+        if (moveCounter > 8) {
+            bottomHeadline.text = "Tie game!"
+            //gameOver = true
+            
+        }
         
     }
     
@@ -233,13 +274,46 @@ class ViewController: UIViewController {
         clickable = false
         var winner = ""
         if (player1 == true) {
+            bottomHeadline.text = "Player 2 Wins!"
             winner = "Player 2"
         }
         else {
+            bottomHeadline.text = "Player 1 Wins!"
             winner = "Player 1"
         }
         print(winner)
     }
-
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        playerSquareCounter = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+        arrayCounter = [[false, false, false], [false, false, false], [false, false, false]]
+        arrayCounter = [[false, false, false], [false, false, false], [false, false, false]]
+        moveCounter = 0
+        clickable = true
+        player1 = true
+        bottomHeadline.text = "Player 1's Turn"
+        
+        topLeftButton.setImage(nil, for: .normal)
+        topMiddleButton.setImage(nil, for: .normal)
+        topRightButton.setImage(nil, for: .normal)
+        middleLeftButton.setImage(nil, for: .normal)
+        middleMiddleButton.setImage(nil, for: .normal)
+        middleRightButton.setImage(nil, for: .normal)
+        bottomLeftButton.setImage(nil, for: .normal)
+        bottomMiddleButton.setImage(nil, for: .normal)
+        bottomRightButton.setImage(nil, for: .normal)
+        
+        topLeftButton.backgroundColor = UIColor.white
+        topMiddleButton.backgroundColor = UIColor.white
+        topRightButton.backgroundColor = UIColor.white
+        middleLeftButton.backgroundColor = UIColor.white
+        middleMiddleButton.backgroundColor = UIColor.white
+        middleRightButton.backgroundColor = UIColor.white
+        bottomLeftButton.backgroundColor = UIColor.white
+        bottomMiddleButton.backgroundColor = UIColor.white
+        bottomRightButton.backgroundColor = UIColor.white
+        
+        
+    }
+    
 }
 

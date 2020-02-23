@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ThaleahFat.ttf">
+            <string>ThaleahFat</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -121,17 +126,55 @@
                                     <constraint firstAttribute="height" constant="300" id="2xD-sy-MCf"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1's Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8F-k2-4Ck">
+                                <rect key="frame" x="78.5" y="623" width="257.5" height="37"/>
+                                <fontDescription key="fontDescription" name="ThaleahFat" family="ThaleahFat" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIC-TAC-TOE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fr-cY-EpM">
+                                <rect key="frame" x="45" y="143.5" width="324" height="64.5"/>
+                                <fontDescription key="fontDescription" name="ThaleahFat" family="ThaleahFat" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKk-Cu-Leh">
+                                <rect key="frame" x="182" y="690" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TUB-ab-Brx"/>
+                                    <constraint firstAttribute="width" constant="50" id="aKR-JH-AUx"/>
+                                </constraints>
+                                <state key="normal" image="New Piskel-4.png (2)"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u8r-F5-rGI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkD-vn-HlB">
+                                <rect key="frame" x="185.5" y="750" width="43.5" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="cKk-Cu-Leh" firstAttribute="top" secondItem="F8F-k2-4Ck" secondAttribute="bottom" constant="30" id="16i-An-MrI"/>
+                            <constraint firstItem="LQo-E1-Ory" firstAttribute="top" secondItem="3Fr-cY-EpM" secondAttribute="bottom" constant="90" id="9sV-S5-4O2"/>
+                            <constraint firstItem="cKk-Cu-Leh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C11-oF-Xa9"/>
+                            <constraint firstItem="F8F-k2-4Ck" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVw-PD-71E"/>
                             <constraint firstItem="LQo-E1-Ory" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SnI-x0-wZY"/>
                             <constraint firstItem="LQo-E1-Ory" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="TJF-qA-1uc"/>
+                            <constraint firstItem="xkD-vn-HlB" firstAttribute="top" secondItem="cKk-Cu-Leh" secondAttribute="bottom" constant="10" id="cHY-jx-peF"/>
+                            <constraint firstItem="3Fr-cY-EpM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dTt-0R-V5p"/>
+                            <constraint firstItem="F8F-k2-4Ck" firstAttribute="top" secondItem="LQo-E1-Ory" secondAttribute="bottom" constant="25" id="dqa-lD-LKj"/>
+                            <constraint firstItem="xkD-vn-HlB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fPG-5L-ReW"/>
                             <constraint firstItem="LQo-E1-Ory" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fza-zl-F2J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LQo-E1-Ory" secondAttribute="trailing" constant="15" id="zmp-2P-xHM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomHeadline" destination="F8F-k2-4Ck" id="Na3-W9-h20"/>
                         <outlet property="bottomLeftButton" destination="8Vf-3c-r5n" id="dtc-bd-YUQ"/>
                         <outlet property="bottomMiddleButton" destination="qCJ-tJ-zZD" id="LWp-4h-FFb"/>
                         <outlet property="bottomRightButton" destination="rRH-tr-nOt" id="5hM-KH-hPI"/>
@@ -148,4 +191,7 @@
             <point key="canvasLocation" x="139" y="119"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="New Piskel-4.png (2)" width="96" height="96"/>
+    </resources>
 </document>
